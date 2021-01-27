@@ -6,21 +6,15 @@ class HomePage extends StatefulWidget {
   _HomePageState createState() => _HomePageState();
 }
 
-class _HomePageState extends State<HomePage> { 
+class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text("Password generator")
-      ),
-      body: Container(
-        margin: const EdgeInsets.all(20.0),
-          child: Column(
-            children: <Widget>[
-              WidgetContainer()
-            ],
-          )
-      ) 
-    );
+        appBar: AppBar(title: Text("Password generator")),
+        body: Container(
+            margin: const EdgeInsets.all(20.0),
+            child: Column(
+              children: <Widget>[WidgetContainer()],
+            )));
   }
 }

@@ -2,13 +2,21 @@
 
 Mobile application to generate random password
 
-![Alt text](git-img/padlock.png?raw=true "Padlock")
-
 ## Features  
 
-* **Easy** : Generate an easy password with characters : ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz  
+* **Easy** : Generate an easy password with characters : ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz 
+
+![Alt text](git-img/easy.png?raw=true "Easy")  
+
 * **Medium** : Generate a medium password : **Easy characters** + 0123456789  
+
+![Alt text](git-img/medium.png?raw=true "Medium")  
+
 * **Hard** : Generate an hard password : **Medium characters** + !#\$%&'()*+,-./:;<=>?@[\\]^_`{|}~  
+
+![Alt text](git-img/hard.png?raw=true "Hard")  
+
+Exemple with password size at 12.  
 
 ## Resources
 
