@@ -1,12 +1,15 @@
 import 'package:flutter/material.dart';
 import 'dart:math';
 
-const MAX_LENGTH = 64;
+import 'package:password_generator/widget_container.dart';
+
+const MAX_LENGTH = 128128;
 
 class ButtonGenerate extends StatefulWidget {
 
   final int passwordSize;
-  ButtonGenerate(this.passwordSize);
+  final Difficulty difficulty;
+  ButtonGenerate(this.passwordSize, this.difficulty);
 
   @override
   _ButtonGenerateState createState() => _ButtonGenerateState();
@@ -14,7 +17,10 @@ class ButtonGenerate extends StatefulWidget {
 
 class _ButtonGenerateState extends State<ButtonGenerate> {
 
-  String availableChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!#\$%&'()*+,-./:;<=>?@[\\]^_`{|}~";
+  final String easyChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+  final String mediumChars = "0123456789";
+  final String hardChars = "!#\$%&'()*+,-./:;<=>?@[\\]^_`{|}~";
+  String availableChars;
   String generated = "";
 
   /// Event when button generate is clicked
@@ -24,7 +30,17 @@ class _ButtonGenerateState extends State<ButtonGenerate> {
     String created = "";
     int index;
 
+    /// Password size limit
     if (widget.passwordSize > MAX_LENGTH) return;
+
+    /// Build available chars
+    if (widget.difficulty == Difficulty.easy) {
+      availableChars = easyChars;
+    } else if (widget.difficulty == Difficulty.medium) {
+      availableChars = easyChars + mediumChars;
+    } else {
+      availableChars = easyChars + mediumChars + hardChars;
+    }
 
     for (int i = 0; i < widget.passwordSize; i++) {
       index = random.nextInt(this.availableChars.length);  
@@ -55,10 +71,12 @@ class _ButtonGenerateState extends State<ButtonGenerate> {
           margin: const EdgeInsets.all(10.0),
           child: Column(
             children: <Widget>[
-              SelectableText(this.generated,
+              SelectableText(
+                this.generated,
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
-                  fontSize: 20.0
+                  fontSize: 20.0,
+                  color: Colors.green
                 )
               )
             ],

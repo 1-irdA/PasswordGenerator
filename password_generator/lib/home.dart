@@ -1,24 +1,12 @@
 import 'package:flutter/material.dart';
-import 'text_field_size.dart';
-import 'button_generate.dart';
-import 'radio_button.dart';
+import 'widget_container.dart';
 
 class HomePage extends StatefulWidget {
   @override
   _HomePageState createState() => _HomePageState();
 }
 
-class _HomePageState extends State<HomePage> {
-
-  int passwordSize;
-
-  /// Parse and init password size attribute
-  void getSize(String size) {
-    setState(() {
-      this.passwordSize = int.parse(size);
-    });
-  }
- 
+class _HomePageState extends State<HomePage> { 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -29,9 +17,7 @@ class _HomePageState extends State<HomePage> {
         margin: const EdgeInsets.all(20.0),
           child: Column(
             children: <Widget>[
-              TextFieldSize(this.getSize),
-              RadioButton(),
-              ButtonGenerate(this.passwordSize),
+              WidgetContainer()
             ],
           )
       ) 

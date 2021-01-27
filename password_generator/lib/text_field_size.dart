@@ -26,7 +26,7 @@ class _TextFieldSizeState extends State<TextFieldSize> {
         TextField(
           controller: this.controller,
           decoration: InputDecoration(
-            labelText: "Enter password size (max: 64)",
+            labelText: "Enter password size (max: 128)",
             prefixIcon: Icon(Icons.info),
             suffixIcon: IconButton(
               icon: Icon(Icons.check),

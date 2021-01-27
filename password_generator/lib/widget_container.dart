@@ -1,15 +1,25 @@
 import 'package:flutter/material.dart';
+import 'button_generate.dart';
+import 'text_field_size.dart';
 
 enum Difficulty { easy, medium, hard }
 
-class RadioButton extends StatefulWidget {
+class WidgetContainer extends StatefulWidget {
   @override
-  _RadioButtonState createState() => _RadioButtonState();
+  _WidgetContainerState createState() => _WidgetContainerState();
 }
 
-class _RadioButtonState extends State<RadioButton> {
+class _WidgetContainerState extends State<WidgetContainer> {
 
   Difficulty _difficulty = Difficulty.easy;
+  int passwordSize;
+
+  /// Parse and init password size attribute
+  void getSize(String size) {
+    setState(() {
+      this.passwordSize = int.parse(size);
+    });
+  }
 
   /// When radio button change
   void onRadioChange(Difficulty value) {
@@ -58,7 +68,9 @@ class _RadioButtonState extends State<RadioButton> {
             groupValue: _difficulty,
             onChanged: this.onRadioChange,
           ),
-        )
+        ),
+        TextFieldSize(this.getSize),
+        ButtonGenerate(this.passwordSize, this._difficulty)
       ]
     );
   }
