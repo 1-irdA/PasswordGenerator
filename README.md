@@ -1,9 +1,21 @@
 # PasswordGenerator
-First Flutter project.
 
-![Alt text](git-img/flutter-logo.png?raw=true "Flutter")
+Mobile application to generate random password
 
-## Status - [WORK IN PROGRESS]
+![Alt text](git-img/padlock.png?raw=true "Padlock")
 
 ## Features  
-• Little mobile application to generate random password
+
+* **Easy** Generate an easy password with characters : ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz
+* **Medium** Generate a medium password : **Easy characters** + 0123456789
+* **Hard** Generate an hard password : **Medium characters** + !#\$%&'()*+,-./:;<=>?@[\\]^_`{|}~
+
+## Resources
+
+Password special characters : [OWASP](https://owasp.org/www-community/password-special-characters)
+
+## Requirements
+
+• Flutter - [Flutter](https://flutter.dev/)
+• Android studio - [Android studio](https://developer.android.com/studio)
+• Visual Studio Code - [Visual Studio Code](https://code.visualstudio.com/)

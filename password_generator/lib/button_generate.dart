@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'dart:math';
 
+const MAX_LENGTH = 64;
+
 class ButtonGenerate extends StatefulWidget {
 
   final int passwordSize;
-
   ButtonGenerate(this.passwordSize);
 
   @override
@@ -13,7 +14,7 @@ class ButtonGenerate extends StatefulWidget {
 
 class _ButtonGenerateState extends State<ButtonGenerate> {
 
-  String availableChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz !#\$%&'()*+,-./:;<=>?@[\\]^_`{|}~";
+  String availableChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!#\$%&'()*+,-./:;<=>?@[\\]^_`{|}~";
   String generated = "";
 
   /// Event when button generate is clicked
@@ -23,7 +24,7 @@ class _ButtonGenerateState extends State<ButtonGenerate> {
     String created = "";
     int index;
 
-    if (widget.passwordSize > 128) return;
+    if (widget.passwordSize > MAX_LENGTH) return;
 
     for (int i = 0; i < widget.passwordSize; i++) {
       index = random.nextInt(this.availableChars.length);  
@@ -36,11 +37,6 @@ class _ButtonGenerateState extends State<ButtonGenerate> {
     });
   }
 
-  /// refresh widget
-  void dispose() {
-    super.dispose();
-  }
-
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -49,7 +45,11 @@ class _ButtonGenerateState extends State<ButtonGenerate> {
           icon: Icon(Icons.security), 
           splashColor: Colors.green,
           onPressed: this.click,
-          label: Text("Generate"),
+          label: Text("Generate", 
+            style: TextStyle(
+              fontSize: 20.0
+            ),
+          ),
         ),
         Container(
           margin: const EdgeInsets.all(10.0),

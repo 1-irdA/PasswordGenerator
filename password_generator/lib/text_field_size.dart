@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 class TextFieldSize extends StatefulWidget {
 
   final Function(String) callback;
-  
   TextFieldSize(this.callback);
 
   @override
@@ -16,7 +15,7 @@ class _TextFieldSizeState extends State<TextFieldSize> {
 
   /// Event when user click on textfield button
   void click() {
-    widget.callback(controller.text);
+    widget.callback(this.controller.text);
     controller.clear();
   }
 
@@ -27,7 +26,7 @@ class _TextFieldSizeState extends State<TextFieldSize> {
         TextField(
           controller: this.controller,
           decoration: InputDecoration(
-            labelText: "Enter password size (max: 128)",
+            labelText: "Enter password size (max: 64)",
             prefixIcon: Icon(Icons.info),
             suffixIcon: IconButton(
               icon: Icon(Icons.check),
