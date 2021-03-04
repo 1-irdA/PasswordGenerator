@@ -1,4 +1,4 @@
-# PasswordGenerator
+# password-generator
 
 Mobile application to generate random password
 
