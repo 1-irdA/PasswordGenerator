@@ -6,15 +6,15 @@ Mobile application to generate random password
 
 * **Easy** : Generate an easy password with characters : ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz 
 
-![Alt text](git-img/easy.PNG?raw=true "Easy")  
+![Alt text](assets/easy.PNG?raw=true "Easy")  
 
 * **Medium** : Generate a medium password : **Easy characters** + 0123456789  
 
-![Alt text](git-img/medium.PNG?raw=true "Medium")  
+![Alt text](assets/medium.PNG?raw=true "Medium")  
 
 * **Hard** : Generate an hard password : **Medium characters** + !#\$%&'()*+,-./:;<=>?@[\\]^_`{|}~  
 
-![Alt text](git-img/hard.PNG?raw=true "Hard")  
+![Alt text](assets/hard.PNG?raw=true "Hard")  
 
 Exemples with password size at 12.  
 
